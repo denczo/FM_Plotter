@@ -33,10 +33,17 @@ def current_trigon_wf(label, a, fm, x, c):
         return SquareWave.trigonometric(a, fm, x, c)
 
 
-def current_equation(label):
+def equation_type(wf, title):
+    if title == 'Fourier Series':
+        return wf.equation_fourier()
+    elif title == 'Trigonometric function':
+        return wf.equation_trigon()
+
+
+def current_equation(label, title):
     if label == 'Triangle':
-        return Triangle.equation_string()
+        return equation_type(Triangle, title)
     elif label == 'Sawtooth':
-        return Sawtooth.equation_string()
+        return equation_type(Sawtooth, title)
     elif label == 'Square Wave':
-        return SquareWave.equation_string()
+        return equation_type(SquareWave, title)

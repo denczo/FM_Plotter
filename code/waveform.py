@@ -17,8 +17,12 @@ class Sawtooth:
         return 0.5 + (1 / np.pi) * result
 
     @staticmethod
-    def equation_string():
-        return "0.5a + 2/\u03C0  \u03A3 sin(2\u03C0 f (2n-1) x)/(2n -1)"
+    def equation_fourier():
+        return "0.5a + 1/\u03C0  \u03A3 sin(2\u03C0 f n x)/n"
+
+    @staticmethod
+    def equation_trigon():
+        return "-2a/\u03C0 arctan(1/tan(2\u03C0 f/2 x)) + 0.5)"
 
 
 class SquareWave:
@@ -37,8 +41,12 @@ class SquareWave:
         return 0.5 + 2 / np.pi * result
 
     @staticmethod
-    def equation_string():
-        return "0.5a + 2/\u03C0  \u03A3 sin(2\u03C0 f (2n-1) x)/(2n -1)"
+    def equation_fourier():
+        return "0.5a + 2/\u03C0  \u03A3 sin(2\u03C0 f (2n-1) x)/(2n-1)"
+
+    @staticmethod
+    def equation_trigon():
+        return "a\u03C0 sign(sin(2\u03C0 f x) + 0.5)"
 
 
 class Triangle:
@@ -57,5 +65,9 @@ class Triangle:
         return 0.5 - 4 / np.pi ** 2 * result
 
     @staticmethod
-    def equation_string():
-        return "0.5a + 2/\u03C0  \u03A3 sin(2\u03C0 f (2n-1) x)/(2n -1)"
+    def equation_fourier():
+        return "0.5a - 4/\u03C0\u00B2  \u03A3 cos(2\u03C0 f (2n - 1) x)/(2n - 1)\u00B2"
+
+    @staticmethod
+    def equation_trigon():
+        return "2a/\u03C0 arcsin(sin(2\u03C0 f x - \u03C0/2)) + 0.5"
