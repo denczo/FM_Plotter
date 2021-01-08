@@ -24,13 +24,13 @@ def current_fourier_wf(label, i, fm, x):
         return SquareWave.fourier_series(int(i), fm, x)
 
 
-def current_trigon_wf(label, a, fm, x, c):
+def current_trigon_wf(label, a, fm, x, c, lfo=0):
     if label == 'Triangle':
-        return Triangle.trigonometric(a, fm, x, c)
+        return Triangle.trigonometric(a, fm, x, c, lfo)
     elif label == 'Sawtooth':
-        return Sawtooth.trigonometric(a, fm, x, c)
+        return Sawtooth.trigonometric(a, fm, x, c, lfo)
     elif label == 'Square Wave':
-        return SquareWave.trigonometric(a, fm, x, c)
+        return SquareWave.trigonometric(a, fm, x, c, lfo)
 
 
 def equation_type(wf, title):
