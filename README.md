@@ -4,8 +4,7 @@ Parameters like the amount of iterations, the frequency or the modulation index 
 It's easy to use and helps you to understand how frequency modulation actually works. 
 
 <img src="http://denicz.info/wp-content/uploads/2021/01/fm_plotter1.png" width="600" />
-<img src="http://denicz.info/wp-content/uploads/2021/01/fm_plotter2.png
-" width="600" />
+<img src="http://denicz.info/wp-content/uploads/2021/01/fm_plotter2.png" width="600" />
 
 ## Features
 - Modulation signal (Triangle, Sawtooth, Square Wave)
