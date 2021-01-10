@@ -1,5 +1,5 @@
 import numpy as np
-from code.waveform import Triangle, Sawtooth, SquareWave
+from code.waveform import Triangle, Sawtooth, SquareWave, Sine
 
 
 # discrete integration where s is your signal as array and l is your first entry
@@ -31,10 +31,12 @@ def current_trigon_wf(label, a, fm, x, c, lfo=0):
         return Sawtooth.trigonometric(a, fm, x, c, lfo)
     elif label == 'Square Wave':
         return SquareWave.trigonometric(a, fm, x, c, lfo)
+    elif label == 'Sine':
+        return Sine.trigonometric(a, fm, x, c, lfo)
 
 
 def equation_type(wf, title):
-    if title == 'Fourier Series':
+    if title == 'Fourier series':
         return wf.equation_fourier()
     elif title == 'Trigonometric function':
         return wf.equation_trigon()
