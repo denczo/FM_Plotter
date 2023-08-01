@@ -1,5 +1,5 @@
 import numpy as np
-from code.waveform import Triangle, Sawtooth, SquareWave, Sine
+from tools.waveform import Triangle, Sawtooth, SquareWave, Sine
 
 
 # discrete integration where s is your signal as array and l is your first entry

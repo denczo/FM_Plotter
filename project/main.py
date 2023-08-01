@@ -2,8 +2,8 @@ import matplotlib.pyplot as plt
 from matplotlib import pylab
 
 from matplotlib.widgets import RadioButtons, Slider, CheckButtons
-from code.tools import running_sum, normalize, current_fourier_wf, current_trigon_wf, current_equation
-from code.waveform import *
+from tools.tools import running_sum, normalize, current_fourier_wf, current_trigon_wf, current_equation
+from tools.waveform import *
 
 chunk_size = 3000
 x_plot = np.linspace(0, 2, chunk_size*2)
@@ -32,7 +32,7 @@ def plot_modulation_wave(y, wave, title, legend=False):
         wave.annotate("f(x)", xy=(0.03, 0.94), xycoords='axes fraction',
                       fontsize=8, bbox=dict(boxstyle="round", fc=(1.0, 0.7, 0.7), ec="none", alpha=0.7))
     wave.minorticks_on()
-    wave.grid(b=True, which='minor')
+    wave.grid(visible=True, which='minor')
 
     wave.plot(x_plot[:chunk_size], y[:chunk_size], plot_color)
     wave.annotate(current_equation(wf_modulation.value_selected, title), xy=(0.5, 0.1), xycoords='axes fraction',
@@ -45,7 +45,7 @@ def plot_carrier_wave(y):
     carrier_wave.set_yticks([0, 1])
     carrier_wave.set_xticks([0, x_plot[chunk_size], x_plot[-1]])
     carrier_wave.minorticks_on()
-    carrier_wave.grid(b=True, which='minor')
+    carrier_wave.grid(visible=True, which='minor')
     carrier_wave.plot(x_plot, y)
     carrier_wave.axvline(x=x_plot[chunk_size], color='black', linestyle='--', alpha=0.5, lw=1.5)
 
@@ -122,9 +122,9 @@ plt.rcParams['toolbar'] = 'None'
 fig, axes = plt.subplots(nrows=4, ncols=4)
 fig.set_size_inches(15, 8)
 fig = pylab.gcf()
-fig.canvas.set_window_title('FM Plotter')
-style = ['seaborn']
-plt.style.use(style)
+fig.canvas.manager.set_window_title('FM Plotter')
+# style = ['seaborn']
+plt.style.use("seaborn-v0_8")
 
 fourier_series = plt.subplot(2, 2, 1)
 trigonometric = plt.subplot(2, 2, 2)

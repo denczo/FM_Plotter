@@ -19,7 +19,7 @@ It's easy to use and helps you to understand how frequency modulation actually w
     - modulation index
 
 ## Quickstart Guide
-- simply run `/code/visuals.py`
+- simply run `main.py`
 - choose your modulation signal
 - set frequency of modulating signal
 - calculate Integral
