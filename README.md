@@ -19,6 +19,7 @@ It's easy to use and helps you to understand how frequency modulation actually w
     - modulation index
 
 ## Quickstart Guide
+- tested with Python 3.8.10
 - simply run `main.py`
 - choose your modulation signal
 - set frequency of modulating signal
